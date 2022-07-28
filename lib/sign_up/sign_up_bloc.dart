@@ -5,6 +5,8 @@ import 'package:simple_app_bloc/auth_models/email.dart';
 import 'package:simple_app_bloc/auth_models/name.dart';
 import 'package:simple_app_bloc/auth_models/password.dart';
 import 'package:formz/formz.dart';
+import '../db/time_database.dart';
+import '../models/time.dart';
 import 'sign_up_event.dart';
 import 'sign_up_state.dart';
 
@@ -15,6 +17,16 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   void onTransition(Transition<SignUpEvent, SignUpState> transition) {
     print(transition);
     super.onTransition(transition);
+  }
+
+  Future addTime() async{
+    DateTime now = new DateTime.now();
+    //DateTime date = new DateTime(now.year, now.month, now.day);
+    final time = Time(
+      email: state.email.value,
+      createdTime: now,
+    );
+    await TimeDatabase.instance.create(time);
   }
 
   @override
@@ -86,6 +98,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
       if (!state.status.isValidated) return;
       yield state.copyWith(status: FormzStatus.submissionInProgress);
       try {
+        await addTime();
         await Future.delayed(Duration(seconds: 3));
         yield state.copyWith(status: FormzStatus.submissionSuccess);
       } on Exception {
