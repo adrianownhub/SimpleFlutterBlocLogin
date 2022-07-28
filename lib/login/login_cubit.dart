@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:simple_app_bloc/auth_models/email.dart';
 import 'package:simple_app_bloc/auth_models/password.dart';
-import 'package:simple_app_bloc/time_database.dart';
+import 'package:simple_app_bloc/db/time_database.dart';
 import 'package:formz/formz.dart';
 import '../models/time.dart';
 import 'login_state.dart';

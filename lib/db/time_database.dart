@@ -1,7 +1,7 @@
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
-import 'models/time.dart';
+import '../models/time.dart';
 
 class TimeDatabase{
   static final TimeDatabase instance = TimeDatabase._init();

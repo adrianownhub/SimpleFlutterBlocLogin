@@ -1,4 +1,4 @@
-package com.mumble.flutter_bloc_article;
+package com.test.simple_bloc_login;
 
 import io.flutter.embedding.android.FlutterActivity;
 

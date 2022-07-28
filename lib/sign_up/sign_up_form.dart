@@ -69,7 +69,7 @@ class _NameInputField extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.only(bottom: 16.0),
           child: AuthTextField(
-            hint: 'Nome',
+            hint: 'Name',
             key: const Key('signUpForm_nameInput_textField'),
             isRequiredField: true,
             keyboardType: TextInputType.text,

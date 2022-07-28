@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:simple_app_bloc/time_database.dart';
+import 'package:simple_app_bloc/db/time_database.dart';
 import '../models/time.dart';
 
-import '../note_card_widget.dart';
+import '../widget/note_card_widget.dart';
 
 class HomeScaffold extends StatefulWidget {
 
