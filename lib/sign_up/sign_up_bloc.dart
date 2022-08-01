@@ -15,7 +15,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
 
   @override
   void onTransition(Transition<SignUpEvent, SignUpState> transition) {
-    print(transition);
+    //print(transition);
     super.onTransition(transition);
   }
 
@@ -73,7 +73,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
           password: state.password.value,
           value: event.confirmPassword
       );
-      print('confirm is valid ${password.valid}');
+      //('confirm is valid ${password.valid}');
       yield state.copyWith(
         confirmPassword: password.valid ? password : ConfirmPassword.pure(),
         status: Formz.validate([

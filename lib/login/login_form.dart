@@ -16,7 +16,7 @@ class LoginForm extends StatelessWidget {
     return BlocConsumer<LoginCubit, LoginState>(
         listener: (context, state) {
           if (state.status.isSubmissionFailure) {
-            print('submission failure');
+            //print('submission failure');
           } else if (state.status.isSubmissionSuccess) {
             Navigator.of(context).pushNamed('/home');
           }
